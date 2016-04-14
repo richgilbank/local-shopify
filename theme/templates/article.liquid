@@ -1,0 +1,93 @@
+{% paginate article.comments by 100 %}
+<div id="article" class="row">
+  
+  <div class="span9 article">
+    
+    <!-- Begin article -->
+    <div class="article-body clearfix">
+      <h1>{{ article.title }} <span class="date" style="display: block;">
+      {% assign published_at = article.published_at | date: format: 'short' %}
+      {{ 'blogs.article.posted_on_date' | t: date: published_at }} {% if article.comments_enabled? %}, <span>{{ 'blogs.comments.comments_with_count' | t: count: article.comments_count }}</span>{% endif %}</span></h1>
+      <div id="article-content">
+        {{ article.content }}
+      </div>
+    </div>
+    <!-- End article -->
+
+    <!-- Begin social buttons -->
+    {% if settings.social_sharing_products %}
+    <div>
+      {% include 'social-sharing' %}
+    </div>
+    <hr class="divider" />
+    {% endif %}
+    <!-- End social buttons -->    
+
+    <!-- Begin comments -->
+    {% if blog.comments_enabled? %}
+    <div id="comments" class="comments">
+      
+      {% if article.comments.size > 0 or comment.created_at %}
+      <h2 class="comment-title">{{ 'blogs.comments.title' | t }}</h3>
+      
+      {% if comment and comment.created_at %}
+        <div id="comment-{{ comment.id }}" class="comment border-bottom clearfix">
+          <h3 class="author">
+          {% capture comment_date %}<strong><time datetime=\"{{ comment.created_at | date: format: 'short' }}\">{{ comment.created_at | date: format: 'short' }}</time></strong>{% endcapture %}{{ 'blogs.article.comment_meta_html' | t: author: comment.author, date: comment_date }}</h3>
+          <div>{{ comment.content }}</div>
+        </div> <!-- /.comment -->
+      {% endif %}
+      
+      {% for comment in article.comments %}
+        <div id="comment-{{ comment.id }}" class="comment border-bottom clearfix">
+          <h3 class="author">{{ 'blogs.article.comment_meta_html' | t: author: comment.author, date: '' }}<strong><time datetime=\"{{ comment.created_at | date: format: 'short' }}\">{{ comment.created_at | date: format: 'short' }}</strong></h3>
+          <div>{{ comment.content }}</div>
+        </div> <!-- /.comment -->
+      {% endfor %}
+
+      {% include 'pagination' %}
+
+      {% endif %}
+      <div class="comment_form">
+        {% form "new_comment", article %}
+        <h2 class="comment-title">{{ 'blogs.comments.form_title' | t }}</h2>
+
+        {% if form.posted_successfully? %}
+        {% if blog.moderated? %}
+        <p class="subtext success">{{ 'blogs.comments.success_moderated' | t }}</p>
+        {% else %}
+        <p class="subtext success">{{ 'blogs.comments.success' | t }}</p>
+        {% endif %}
+        {% endif %}
+
+        {% if form.errors %}
+        <p class="subtext error">{{ 'blogs.comments.error' | t }}</p>
+        {% endif %}
+
+        <label for="comment_author">{{ 'blogs.comments.name' | t }}</label>
+        <input type="text" id="comment_author" name="comment[author]" size="40" class="text" />
+        <label for="comment_email">{{ 'blogs.comments.email' | t }}</label>
+        <input type="text" id="comment_email" name="comment[email]" size="40" class="text" />
+        <label for="comment_body">{{ 'blogs.comments.message' | t }}</label>
+        <textarea id="comment_body" name="comment[body]" cols="40" rows="5" class="text">{{form.body}}</textarea>
+
+        <input type="submit" value="{{ 'blogs.comments.post' | t }}" class="btn" id="comment-submit" />
+
+        {% if blog.moderated? %}
+        <div class="notice">{{ 'blogs.comments.moderated' | t }}</div>
+        {% endif %}
+
+        {% endform %}
+      </div>
+    </div> 
+    {% endif %}
+    <!-- End comments -->
+    
+  </div>
+  
+  <!-- Begin sidebar -->
+  {% include 'blog_sidebar' %}
+  <!-- End sidebar -->
+  
+</div>
+{% endpaginate %}

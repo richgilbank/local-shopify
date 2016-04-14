@@ -1,0 +1,19 @@
+{% if paginate.pages > 1 %}
+{% unless template == 'customers/account' %}<div class="row">{% endunless %}
+  <div>
+    <ul class="pagination clearfix">
+    {% if paginate.previous %}
+    	<li><a href="{{ paginate.previous.url }}" class="prev">{{ 'general.pagination.previous' | t }}</a></li>
+    {% else %}
+    	<li><span>{{ back_word }}</span></li>
+    {% endif %}
+    	<li>{{ 'general.pagination.summary' | t: current_page: paginate.current_page, pages: paginate.pages }}</li>
+    {% if paginate.next %}
+    	<li><a href="{{ paginate.next.url }}" class="next">{{ 'general.pagination.next' | t }}</a></li>
+    {% else %}
+    	<li><span>{{ next_word }}</span></li>
+    {% endif %}
+    </ul>
+  </div>
+{% unless template == 'customers/account' %}</div>{% endunless %}
+{% endif %}

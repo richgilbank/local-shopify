@@ -1,0 +1,64 @@
+<h1>Boo</h1>
+<div id="404" class="row">
+  <div class="span12">
+
+    <h2>{{ 'general.404.title' | t }}</h2>
+    <span class="subtext">{{ 'general.404.subtext' | t }}</span>
+
+  </div>
+</div>
+
+{% if shop.products_count == 0 %}
+  <div id="example-product-helper-section" class="clearfix helper-section" style="display:none;">
+      <div class="note helper-note helper-product"><i class="icon-products helper-icon"></i>
+          <h3>{{ 'products.example_product.overlay_title' | t }}</h3>
+          <p>{{ 'products.example_product.subtext_html' | t }}</p>
+          <p>
+            <a href="/admin/products/new" class="admin-btn-primary">{{ 'products.example_product.add_product' | t }}</a>
+          </p>
+      </div>
+      <div class="helper-content clearfix">
+          <div id="product" class="example-product">
+              <div class="row">
+                  <div class="span12">
+                      <div class="breadcrumb clearfix">
+                        <a href="/">{{ 'general.breadcrumbs.home' | t }}</a><span class="arrow-space">&gt;</span><a href="/collections/all" title="All Products">{{ 'general.breadcrumbs.products' | t }}</a><span class="arrow-space">&gt;</span><strong>{{ 'products.example_product.title' | t }}</strong>
+                      </div>
+                  </div>
+                  <div class="span6">
+                      <div class="featured">
+                        <img src="{{ "product-1.png" | asset_url }}" alt="{{ 'products.example_product.title' | t }}">
+                      </div>
+                  </div>
+                  <div class="span6">
+                      <h1 class="title">{{ 'products.example_product.title' | t }}</h1>
+                      <div class="purchase">
+                          <h2 class="price">$79.99</h2>
+                      </div>
+                      <div class="clearfix">
+                          <div class="product-options no-options ">
+                            <a class="btn">{{ 'products.product.add_to_cart' | t }}</a>
+                          </div>
+                      </div>
+                      <div class="description">
+                        <span>{{ 'products.example_product.description_html' | t }}</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <script type="text/javascript">
+    (function() {
+      if ( window.location.pathname === "/products/example-product" ) {
+        document.title = "{{ 'products.example_product.title' | t }}";
+        $("#404").hide();
+        $(function() {
+          $("#example-product-helper-section").show();
+        });
+      }
+    })();
+  </script>
+
+{% endif %}

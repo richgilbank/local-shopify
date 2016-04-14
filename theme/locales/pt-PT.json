@@ -1,0 +1,292 @@
+{
+  "general": {
+    "404": {
+      "title": "Página não encontrada",
+      "subtext": "Lamentamos, mas não conseguímos encontrar esta página."
+    },
+    "pagination": {
+      "previous": "Anterior",
+      "next": "Seguinte",
+      "summary": "Página {{ current_page }} de {{ pages }}"
+    },
+    "breadcrumbs": {
+      "home": "Início",
+      "products": "Produtos"
+    },
+    "search": {
+      "placeholder": "pesquisar a nossa loja",
+      "no_results_title": "Sem resultados de pesquisa",
+      "no_results_html": "A sua pesquisa por <strong>{{ search }}<\/strong> não produziu resultados. Experimente procurar outra coisa.",
+      "results_title": "Resultados da Pesquisa"
+    },
+    "meta": {
+      "tagged": "etiquetas",
+      "page": "Página"
+    }
+  },
+  "layout": {
+    "header": {
+      "search": "Pesquisar",
+      "cart": "Carrinho de Compras",
+      "menu": "Menu"
+    },
+    "customer": {
+      "login": "Iniciar sessão",
+      "or": "ou",
+      "create_account": "Criar uma conta",
+      "your_account": "A Sua Conta"
+    },
+    "footer": {
+      "latest_news": "Notícias Mais Recentes",
+      "quick_links": "Links Rápidos",
+      "follow_us": "Siga-nos",
+      "newsletter_title": "Newsletter",
+      "newsletter_email": "Endereço de Email",
+      "newsletter_submit": "Subscrever",
+      "copyright": "Direitos reservados",
+      "social": "{{ shop }} no {{ social_media }}",
+      "news": "notícias da {{ shop }}"
+    }
+  },
+  "collections": {
+    "general": {
+      "browse": "Explorar:",
+      "all_items": "Todos os itens",
+      "items_with_count": {
+        "one": "{{ count }} produto",
+        "other": "{{ count }} produtos"
+      }
+    },
+    "list_collections": {
+      "product_collections": "Coleções de Produtos"
+    },
+    "sorting": {
+      "title": "Ordenar por",
+      "featured": "Em Destaque",
+      "best_selling": "Mais Vendidos",
+      "az": "Alfabeticamente, A-Z",
+      "za": "Alfabeticamente, Z-A",
+      "price_ascending": "Preço, mais baratos",
+      "price_descending": "Preço, mais caros",
+      "date_descending": "Data, mais recentes",
+      "date_ascending": "Data, mais antigos"
+    }
+  },
+  "products": {
+    "general": {
+      "from": "Desde",
+      "share_on_facebook": "Partilhar",
+      "share_on_twitter": "Tweet",
+      "share_on_pinterest": "Pin it",
+      "share_on_fancy": "Fancy",
+      "related_products": "Produtos Relacionados"
+    },
+    "product": {
+      "sold_out_html": "Esgotado",
+      "sale": "Promoção",
+      "unavailable_html": "Indisponível",
+      "quantity": "Quantidade",
+      "add_to_cart": "Adicionar ao Carrinho de Compras"
+    },
+    "onboarding": {
+      "title": "Esta página irá mostrar todos os produtos da sua loja",
+      "subtext": "Ainda não há produtos, mas logo que os comece a adicionar, serão exibidos aqui quer estejam numa coleção ou não.",
+      "add_product": "Adicionar um produto",
+      "view_sample": "Ver um produto de amostra",
+      "example_title": "Título do Produto Exemplo"
+    },
+    "example_product": {
+      "title": "Exemplo de produto",
+      "overlay_title": "Este é um exemplo de uma página de produto",
+      "subtext_html": "Adicione o seu próprio produto para ver esta página em funcionamento e para dar o primeiro passo a testar encomendas. Para dicas sobre como compor descrições eficazes, consulte <a href=\"http:\/\/www.shopify.com\/blog\/8211159-9-simple-ways-to-write-product-descriptions-that-sell?utm_source=default-theme&utm_medium=contextual&utm_campaign=default-theme-products-tooltips-experiment\" target=\"shopify_info\">9 maneiras simples de compor descrições de produtos que levam à compra.<\/a>",
+      "add_product": "Adicione um produto",
+      "description_html": "É aqui que é apresentada a descrição do seu produto."
+    }
+  },
+  "blogs": {
+    "article": {
+      "posted_on_date": "Publicado em  {{ date }}",
+      "comment_meta_html": "<strong>{{ author }}<\/strong> em {{ date }}"
+    },
+    "comments": {
+      "title": "Comentários",
+      "form_title": "Deixe um comentário",
+      "name": "Nome",
+      "email": "Email",
+      "message": "Comentário",
+      "post": "Publicar comentário",
+      "moderated": "Os comentários terão de ser aprovados antes de ser exibidos",
+      "success_moderated": "O seu comentário foi publicado com sucesso. Terá de ser aprovado pelo dono do blogue antes de ser exibido.",
+      "success": "O seu comentário foi publicado com sucesso.",
+      "error": "Nem todos nos campos foram preenchidos corretamente",
+      "comments_with_count": {
+        "one": "{{ count }} comentário",
+        "other": "{{ count }} comentários"
+      }
+    },
+    "sidebar": {
+      "recent_articles": "Artigos Recentes",
+      "tags": "Etiquetas",
+      "all": "Tudo"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "O Seu Carrinho de Compras",
+      "remove": "Eliminar",
+      "note": "Adicionar instruções especiais para o seu pedido...",
+      "update": "Atualizar",
+      "checkout": "Check-Out",
+      "empty": "O seu carrinho de compras está neste momento vazio."
+    },
+    "label": {
+      "product": "Produto",
+      "price": "Preço",
+      "quantity": "Quantidade"
+    }
+  },
+  "home_page": {
+    "onboarding": {
+      "products_title": "Ainda não adicionou nenhum produto",
+      "products_text_html": "Demore menos de um minuto a <a href=\"\/admin\/products\">adicionar o seu primeiro produto<\/a> à sua loja. Certifique-se de que o adiciona à coleção <strong>{{ frontpage }}<\/strong> para o ver na página inicial.",
+      "add_product": "Adicionar um produto",
+      "view_sample": "Ver um produto de amostra",
+      "collections_title": "Está quase...",
+      "collections_text_html": "Agora, adicione um produto à coleção <strong>{{ frontpage }}<\/strong> para o ver na página inicial.",
+      "add_collection": "Adicionar à coleção",
+      "learn_collections": "Saiba mais sobre coleções",
+      "example_product_title": "Produto em Destaque Exemplo",
+      "example_product_text": "A sua loja está com um pouco vazia! Esta imagem de preenchimento será exibida até adicionar o seu primeiro produto.",
+      "page_title": "Como modificar esta secção",
+      "page_text": "Pode alterar o texto desta área editando a página \"Frontpage\" na secção Páginas da sua área administrativa. Também pode substituir a página \"Frontpage\" por outra página nas suas Definições de Tema.",
+      "edit_page": "Editar página \"Frontpage\"",
+      "view_settings": "Ver definições de tema",
+      "view_product": "Ver Produto"
+    },
+    "products": {
+      "view_product": "Ver Produto"
+    }
+  },
+  "contact": {
+    "form": {
+      "name": "Nome",
+      "email": "Email",
+      "phone": "Número de Telefone",
+      "message": "Mensagem",
+      "send": "Enviar",
+      "post_success": "Obrigado por entrar em contacto connosco. Responder-lhe-emos logo que possível.",
+      "post_error": "Oh não. Lamentamos, mas não conseguímos enviar o seu pedido. Por favor, corrija os seguintes elementos e tente novamente:",
+      "post_field_error_html": "O campo <strong>{{ field }}<\/strong> {{ error }}"
+    },
+    "placeholder": {
+      "name": "Fulano de Tal",
+      "email": "fulano@exemplo.com",
+      "phone": "555-555-1234",
+      "message": "A sua mensagem"
+    }
+  },
+  "customer": {
+    "general": {
+      "or": "ou"
+    },
+    "account": {
+      "title": "A Minha Conta",
+      "view_addresses": "Ver Endereços",
+      "logout": "Terminar Sessão"
+    },
+    "activate_account": {
+      "title": "Ativar Conta",
+      "subtext": "Crie a sua senha para ativar a sua conta.",
+      "password": "Senha",
+      "password_confirm": "Confirmar Senha",
+      "submit": "Ativar Conta",
+      "cancel": "Recusar Convite"
+    },
+    "addresses": {
+      "title": "Os Seus Endereços",
+      "default": "(Endereço Predefinido)",
+      "add_new": "Adicionar um Novo Endereço",
+      "first_name": "Nome Próprio",
+      "last_name": "Sobrenome",
+      "company": "Empresa",
+      "address1": "Endereço1",
+      "address2": "Endereço2",
+      "city": "Localidade",
+      "country": "País",
+      "province": "Província",
+      "zip": "Código Postal",
+      "phone": "Telefone",
+      "set_default": "Selecionar como endereço predefinido?",
+      "add": "Adicionar Endereço",
+      "update": "Atualizar Endereço",
+      "cancel": "Cancelar",
+      "edit": "Editar",
+      "delete": "Eliminar"
+    },
+    "login": {
+      "title": "Login",
+      "email": "Email",
+      "password": "Senha",
+      "forgot_password": "Esqueceu-se da sua senha?",
+      "reset_password": "Repor Senha",
+      "reset_password_subtext": "Vamos enviar-lhe um email para repor a sua senha.",
+      "sign_in": "Iniciar Sessão",
+      "guest_title": "Login de Visitante",
+      "guest_continue": "Continuar como visitante",
+      "cancel": "Cancelar",
+      "submit_recover": "Submeter"
+    },
+    "orders": {
+      "order_number": "Pedido",
+      "date": "Data",
+      "payment_status": "Estado de Pagamento",
+      "fulfillment_status": "Estado de Atendimento",
+      "total": "Total",
+      "none": "Ainda não efetuou nenhum pedido."
+    },
+    "order": {
+      "title": "Pedido {{ name }}",
+      "cancelled": "Pedido Cancelado",
+      "cancelled_reason": "Motivo: {{ reason }}",
+      "billing_address": "Endereço de Faturação",
+      "payment_status": "Estado de Pagamento",
+      "shipping_address": "Endereço de Envio",
+      "fulfillment_status": "Estado de Atendimento",
+      "product": "Produto",
+      "sku": "SKU",
+      "price": "Preço",
+      "quantity": "Quantidade",
+      "total": "Total",
+      "subtotal": "Subtotal",
+      "fulfilled": "Realizado"
+    },
+    "reset_password": {
+      "title": "Repor Senha",
+      "password": "Senha",
+      "password_confirm": "Confirmar Senha",
+      "submit": "Repor Senha"
+    },
+    "register": {
+      "title": "Criar Conta",
+      "first_name": "Nome Próprio",
+      "last_name": "Sobrenome",
+      "email": "Email",
+      "password": "Senha",
+      "submit": "Criar",
+      "cancel": "Regressar à Loja"
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "title": "Aqui está o seu cartão-presente de {{ value }} para {{ shop }}!",
+      "subtext": "Aqui está o seu cartão-presente!",
+      "disabled": "Inválido",
+      "expired": "Expirou em",
+      "active": "Expira em",
+      "redeem": "Use este código ao fazer o check-out para redimir o seu cartão-presente",
+      "shop_link": "Começar a fazer compras",
+      "print": "Imprimir",
+      "left": "restante"
+    }
+  }
+}

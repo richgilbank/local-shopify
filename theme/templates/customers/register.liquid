@@ -1,0 +1,39 @@
+<div id="customer-register">
+  <div class="row">
+    <div id="register" class="span12">
+      <h2 class="title">{{ 'customer.register.title' | t }}</h2>
+
+	    {% form 'create_customer' %}
+
+	      {{ form.errors | default_errors }}
+
+	      <div id="first_name" class="clearfix large_form">
+	        <label for="first_name" class="label">{{ 'customer.register.first_name' | t }}</label>
+	        <input type="text" value="" name="customer[first_name]" id="first_name" class="text" size="30" />
+	      </div>
+
+	      <div id="last_name" class="clearfix large_form">
+	        <label for="last_name" class="label">{{ 'customer.register.last_name' | t }}</label>
+	        <input type="text" value="" name="customer[last_name]" id="last_name" class="text" size="30" />
+	      </div>
+
+	      <div id="email" class="clearfix large_form">
+	        <label for="email" class="label">{{ 'customer.register.email' | t }}</label>
+	        <input type="email" value="" name="customer[email]" id="email" class="text" size="30" />
+	      </div>
+
+	      <div id="password" class="clearfix large_form">
+	        <label for="password" class="label">{{ 'customer.register.password' | t }}</label>
+	        <input type="password" value="" name="customer[password]" id="password" class="password text" size="30" />
+	      </div>
+
+	      <div class="action_bottom">
+	        <input class="btn" type="submit" value="{{ 'customer.register.submit' | t }}" /> {{ 'customer.general.or' | t }}
+	        <span class="note"><a href="{{ shop.url }}">{{ 'customer.register.cancel' | t }}</a></span>
+	      </div>
+
+	    {% endform %}
+
+    </div><!-- #register -->
+  </div><!-- .row -->
+</div><!-- #customer-register -->
