@@ -1,0 +1,11 @@
+{
+  "name": "local-shopify",
+  "version": "0.0.1",
+  "description": "Local theme development for Shopify",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rich Gilbank",
+  "license": "MIT"
+}
