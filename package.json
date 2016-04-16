@@ -4,7 +4,7 @@
   "description": "Local theme development for Shopify",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "supervisor server.js"
   },
   "author": "Rich Gilbank",
   "license": "MIT",
@@ -12,5 +12,8 @@
     "express": "^4.13.4",
     "liquid-node": "^2.6.1",
     "shopify-buy": "^0.1.2"
+  },
+  "devDependencies": {
+    "supervisor": "^0.10.0"
   }
 }
