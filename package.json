@@ -4,8 +4,13 @@
   "description": "Local theme development for Shopify",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "author": "Rich Gilbank",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.4",
+    "liquid-node": "^2.6.1",
+    "shopify-buy": "^0.1.2"
+  }
 }
