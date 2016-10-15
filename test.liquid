@@ -1,8 +1,0 @@
-{% assign myArr = "thing,stuff" | split: "," %}
-{% for num in (1...12) %}
-  <div>
-  {% cycle 'thing1': 1.0, 2.0, 1.5 %}
-  {% cycle 'thing2': 'foo', 'bar', 'baz' %}
-  </div>
-{% endfor %}
-{% include 'foo', color: 'blue' %}

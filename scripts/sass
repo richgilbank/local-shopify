@@ -1,27 +1,51 @@
 const fs = require('fs');
 const path = require('path');
 const watch = require('watch');
+const sass = require('node-sass');
 const Liquid = require('shopify-liquid');
 const engine = Liquid();
 
 const assetsDir = path.join(process.cwd(), 'theme', 'assets');
 const settings = require(path.resolve(process.cwd(), 'theme/config/settings_data.json'));
 
+const isLiquidFile = /.*\.liquid$/;
+
+fs.readdir(assetsDir, (err, files) => {
+  files
+    .filter((file) => isLiquidFile.test(file))
+    .forEach(compileLiquid);
+});
+
 watch.createMonitor(assetsDir, {
-    filter: (f) => /.*\.liquid$/.test(f)
+    filter: (f) => isLiquidFile.test(f)
   }, (monitor) => {
   monitor.on('changed', (filename) => {
-    fs.readFile(filename, 'utf8', function(err, content) {
-      engine.parseAndRender(content, {settings: settings.current})
-        .then(function(scss) {
-          const newFilePath = filename.replace(/\.liquid$/, '');
-          console.log('new file: ', newFilePath);
-          fs.writeFile(newFilePath, scss, (err) => {
-            if(err) console.error(err);
-          });
-        }).catch(function(err) {
-          console.error(err);
-        });
-    });
+    compileLiquid(filename);
   });
 });
+
+function compileLiquid(filename) {
+  fs.readFile(filename, 'utf8', function(err, content) {
+    engine.parseAndRender(content, {settings: settings.current})
+      .then(function(scss) {
+        const newFilePath = filename.replace(/\.liquid$/, '');
+        fs.writeFile(newFilePath, scss, (err) => {
+          if(err) throw err;
+          compileSCSS(newFilePath);
+        });
+      }).catch(function(err) {
+        console.error(err);
+      });
+  });
+}
+
+function compileSCSS(filename) {
+  sass.render({
+    file: filename,
+  }, (err, result) => {
+    if(err) throw err;
+    fs.writeFile(`${filename}.css`, result.css.toString(), (err) => {
+      if(err) throw err;
+    });
+  });
+}
