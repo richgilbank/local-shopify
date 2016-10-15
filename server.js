@@ -1,18 +1,53 @@
+const path = require('path');
 const fs = require('fs');
 const express = require('express');
 const settings_data = require('./theme/config/settings_data.json');
-const Liquid = require('liquid-node');
+const Liquid = require('shopify-liquid');
+const engine = Liquid({
+  root: path.resolve(__dirname, 'theme/'),
+  extname: '.liquid',
+  cache: false
+});
+
+const settingsData = require('./theme/config/settings_data.json');
+const collectionsData = {
+  frontpage: {
+    products: [
+      1,2,3
+    ]
+  }
+};
+const pagesData = {
+  frontpage: {
+    content: 'foobar'
+  }
+};
+const objects = {
+  page_title: 'my page',
+  current_page: 1,
+  template: 'index',
+  shop: {
+    name: 'My Shop'
+  }
+};
+const renderSettings = Object.assign({}, objects, {
+  settings: settingsData.current,
+  collections: collectionsData,
+  pages: pagesData
+});
 
 const app = express();
-const engine = new Liquid.Engine();
+app.use(express.static('theme'));
 app.set('port', process.env.PORT || 3000);
-engine.registerFileSystem(new Liquid.LocalFileSystem('./theme/snippets', 'liquid'));
-
-const templateSettings = {settings: settings_data.current};
-const indexPath = './theme/templates/index.liquid';
 
 app.get('/', (req, res) => {
-  res.send('home');
+  engine.renderFile('templates/index', renderSettings)
+    .then(function(html) {
+      res.send(html);
+    })
+    .catch(function(liquidErr) {
+      console.log(liquidErr);
+    });
 });
 
 // Start the server, auto reload

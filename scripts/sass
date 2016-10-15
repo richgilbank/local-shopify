@@ -1,0 +1,27 @@
+const fs = require('fs');
+const path = require('path');
+const watch = require('watch');
+const Liquid = require('shopify-liquid');
+const engine = Liquid();
+
+const assetsDir = path.join(process.cwd(), 'theme', 'assets');
+const settings = require(path.resolve(process.cwd(), 'theme/config/settings_data.json'));
+
+watch.createMonitor(assetsDir, {
+    filter: (f) => /.*\.liquid$/.test(f)
+  }, (monitor) => {
+  monitor.on('changed', (filename) => {
+    fs.readFile(filename, 'utf8', function(err, content) {
+      engine.parseAndRender(content, {settings: settings.current})
+        .then(function(scss) {
+          const newFilePath = filename.replace(/\.liquid$/, '');
+          console.log('new file: ', newFilePath);
+          fs.writeFile(newFilePath, scss, (err) => {
+            if(err) console.error(err);
+          });
+        }).catch(function(err) {
+          console.error(err);
+        });
+    });
+  });
+});

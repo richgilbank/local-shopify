@@ -4,13 +4,16 @@
   "description": "Local theme development for Shopify",
   "main": "index.js",
   "scripts": {
-    "start": "supervisor server.js"
+    "start": "supervisor --debug --restart-verbose server.js",
+    "sass": "node scripts/sass"
   },
   "author": "Rich Gilbank",
   "license": "MIT",
   "dependencies": {
     "express": "^4.13.4",
-    "liquid-node": "^2.6.1"
+    "node-sass": "^3.10.1",
+    "shopify-liquid": "richgilbank/shopify-liquid",
+    "watch": "^1.0.1"
   },
   "devDependencies": {
     "supervisor": "^0.10.0"
