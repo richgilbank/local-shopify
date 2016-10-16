@@ -13,7 +13,6 @@ const settingsData = require('./theme/config/settings_data.json');
 const collectionsData = {
   frontpage: {
     products: [
-      1,2,3
     ]
   }
 };
@@ -33,7 +32,7 @@ const objects = {
 const renderSettings = Object.assign({}, objects, {
   settings: settingsData.current,
   collections: collectionsData,
-  pages: pagesData
+  pages: pagesData,
 });
 
 const app = express();
