@@ -8,7 +8,6 @@
     <p><a class="admin-btn-primary" href="/admin/products/new">{{ 'home_page.onboarding.add_product' | t }}</a><a class="secondary-action" href="/products/example-product">{{ 'home_page.onboarding.view_sample' | t }}</a></p>
   {% elsif collections[settings.frontpage_collection].products.size == 0 %}
     <i class="icon-collections helper-icon"></i>
-    <h3>{{ 'home_page.onboarding.collections_title' | t }}</h3>
     <p>{{ 'home_page.onboarding.collections_text_html' | t: frontpage: collections[settings.frontpage_collection].title }}</p>
     <p><a class="admin-btn-primary" href="/admin/collections?tutorial=Frontpage">{{ 'home_page.onboarding.add_collection' | t }}</a><a class="secondary-action" href="http://docs.shopify.com/manual/your-store/collections?utm_source=default-theme&utm_medium=contextual&utm_campaign=default-theme-products-tooltips-experiment" target="shopify_info">{{ 'home_page.onboarding.learn_collections' | t }}</a></p>
   {% endif %}

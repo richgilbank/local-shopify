@@ -4,18 +4,22 @@
   "description": "Local theme development for Shopify",
   "main": "index.js",
   "scripts": {
-    "start": "npm run sass & supervisor --debug --restart-verbose server.js",
-    "sass": "node scripts/sass"
+    "start": "npm run sass & supervisor --watch index.js,lib --debug --restart-verbose index.js",
+    "sass": "node scripts/sass.js",
+    "fetchData": "node scripts/data.js"
   },
   "author": "Rich Gilbank",
   "license": "MIT",
   "dependencies": {
     "express": "^4.13.4",
+    "lodash": "^4.16.4",
     "node-sass": "^3.10.1",
+    "nodify-shopify": "^0.2.1",
+    "shopify-api-node": "^2.2.0",
     "shopify-liquid": "richgilbank/shopify-liquid",
+    "supervisor": "^0.10.0",
     "watch": "^1.0.1"
   },
   "devDependencies": {
-    "supervisor": "^0.10.0"
   }
 }
