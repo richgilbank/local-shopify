@@ -40,6 +40,7 @@ const mockCollectionData = {
 collectionsData.then((data) => {
   const renderSettings = Object.assign({}, objects, {
     settings: settingsData.current,
+    shop: data.shop,
     collections: data.collections,
     pages: pagesData,
   });
